@@ -1,0 +1,27 @@
+li {
+    cursor: pointer;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+.delete {
+    background-color: rgb(139, 8, 8);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin: 2px;
+    padding: 2px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: grab;
+}
+
+.delete:hover {
+    background-color: yellowgreen;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
