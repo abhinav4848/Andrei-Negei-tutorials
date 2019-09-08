@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import CardList from './CardList';
 import SearchBox from "./SearchBox";
 import { robots } from './robots';
+import './App.css';
 
-// const App = () => {
-// class App extends React.Component {
+// const App = () => {, if we didn't want states, and only props
+// class App extends React.Component {, if {Component} not imported from 'react'
 class App extends Component {
+    //state
     constructor() {
         super()
         this.state = {
@@ -19,7 +21,7 @@ class App extends Component {
         // but if we make our own function, use the = (arrows) => to make 
         // correct association of "this" 
 
-        // instead of this.state.searchfield = , use this:
+        // instead of this.state.searchfield = , use setState()
         this.setState({ searchfield: event.target.value });
     }
 
@@ -30,7 +32,7 @@ class App extends Component {
 
         return (
             <div className='tc' >
-                <h1>Robot Friends</h1>
+                <h1 className='f2'>Robot Friends</h1>
                 <SearchBox searchChange={this.onSearchChange} />
                 <CardList robots={filteredRobots} />
             </div>
