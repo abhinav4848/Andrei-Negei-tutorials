@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CardList from './CardList';
 import SearchBox from "./SearchBox";
 import './App.css';
+import Scroll from "./scroll";
 
 // const App = () => {, if we didn't want states, and only props
 // class App extends React.Component {, if {Component} not imported from 'react'
@@ -41,7 +42,9 @@ class App extends Component {
                 <div className='tc' >
                     <h1 className='f2'>Robot Friends</h1>
                     <SearchBox searchChange={this.onSearchChange} />
-                    <CardList robots={filteredRobots} />
+                    <Scroll>
+                        <CardList robots={filteredRobots} />
+                    </Scroll>
                 </div>
             );
         }
