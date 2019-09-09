@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
-import './App.css';
 import Scroll from '../components/Scroll';
+import ErrorBoundary from '../components/ErrorBoundary';
+import './App.css';
+//import { robots } from "../robots.js";
+//the ones that don't export default need destructuring
+
 
 // const App = () => {, if we didn't want states, and only props
 // class App extends React.Component {, if {Component} not imported from 'react'
@@ -11,6 +15,7 @@ class App extends Component {
     constructor() {
         super()
         this.state = {
+            //robots: robots,
             robots: [],
             searchfield: ''
         }
@@ -43,7 +48,9 @@ class App extends Component {
                     <h1 className='f2'>Robot Friends</h1>
                     <SearchBox searchChange={this.onSearchChange} />
                     <Scroll>
-                        <CardList robots={filteredRobots} />
+                        <ErrorBoundary>
+                            <CardList robots={filteredRobots} />
+                        </ErrorBoundary>
                     </Scroll>
                 </div>
             );
