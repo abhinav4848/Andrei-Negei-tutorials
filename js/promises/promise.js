@@ -6,14 +6,17 @@ const promise = new Promise((resolve, reject) => {
     }
 })
 
+// a promise starts working the moment it is created.
+//.then is just to process the output
+
 promise
     .then(result0 => result0 + '!')
     .then(result1 => {
+        console.log(result1);
         return result1 + '?'
     })
 
-    .then(result2 => console.log(result2 + '...'))
-    //return result2 doesn't work after console.log
+    .then((result2) => console.log(result2 + '...'))
     .then(() => {
         //result2 is lost
         //so no use of accepting arguments to this f()
